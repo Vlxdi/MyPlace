@@ -21,3 +21,24 @@ cursor.addEventListener("mouseover", () => {
     cursor.style.borderColor = "red";
 });
 
+// Function to handle the click delay and navigation
+function navigateWithDelay(url) {
+    // This sets the cursor animation
+    cursor.classList.add("expand");
+
+    setTimeout(function() {
+        window.location.href = url;
+    }, 400);
+}
+
+// Adding event listeners to all clickable elements
+const clickableItems = document.querySelectorAll('.clickable');
+
+clickableItems.forEach(item => {
+    item.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default action (if any)
+        const targetUrl = item.getAttribute('data-url'); // Get the target URL from a data attribute
+        navigateWithDelay(targetUrl);
+    });
+});
+

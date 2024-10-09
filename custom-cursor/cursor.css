@@ -26,8 +26,9 @@
     border: 8px solid gray;
     border-radius: 50%;
     opacity: 0.5;
-    top: -8px;
-    left: -8px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     animation: cursorAnim2 1s infinite alternate;
 }
 
@@ -42,10 +43,10 @@
 
 @keyframes cursorAnim2 {
     from {
-        transform: scale(0.95);
+        transform: translate(-50%, -50%) scale(0.95);
     }
     to {
-        transform: scale(0.4);
+        transform: translate(-50%, -50%) scale(0.4);
     }
 }
 
