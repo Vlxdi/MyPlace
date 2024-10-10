@@ -47,24 +47,150 @@ body {
     overflow: hidden;
     box-sizing: border-box;
 }
+ h3, p {
+    font-size: medium;
+    font-family: fantasy;
+    color: white;
+    position: relative;
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+ }
 
-.project-box {
-    background: rgba(255, 255, 255, 0.23);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 4px solid rgba(255, 255, 255, 0.38);
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    height: 250px;
+ p {
+    color: rgb(255, 255, 255);
+    text-shadow: 10px 2px 15px rgba(24, 24, 24, 0.808);
+ }
+ 
+ .project-box {
+     background: rgba(255, 255, 255, 0.23);
+     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+     backdrop-filter: blur(5px);
+     -webkit-backdrop-filter: blur(5px);
+     border: 4px solid rgba(255, 255, 255, 0.38);
+     padding: 15px;
+     border-radius: 8px;
+     text-align: center;
+     transition: transform 0.3s, box-shadow 0.3s, background-position 0.5s ease-in-out;
+     height: 250px;
+     position: relative;
+     overflow: hidden;
+ }
+ 
+ .project-box:nth-child(1)::before,
+ .project-box:nth-child(2)::before,
+ .project-box:nth-child(3)::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-size: cover;
+     background-position: center;
+     filter: blur(1px);
+     opacity: 0.7;
+     transform: translateY(25%);
+     transition: opacity 0.3s ease, transform 0.5s ease;
+     box-shadow: inset 0px -100px 100px rgba(0, 0, 0, 0.7); 
+ }
+ 
+ .project-box:nth-child(1)::before {
+     background-image: url('/images/pm.png');
+ }
+ 
+ .project-box:nth-child(2)::before {
+     background-image: url('/images/Np.png');
+ }
+ 
+ .project-box:nth-child(3)::before {
+     background-image: url('image3-url');
+ }
+ 
+ .project-box:nth-child(1):hover::before,
+ .project-box:nth-child(2):hover::before,
+ .project-box:nth-child(3):hover::before {
+     filter: blur(0px);
+     opacity: 1;
+     filter: brightness(80%);
+     transform: translateY(0);
+     box-shadow: none;
+ }
+ 
+ .project-box:nth-child(1):hover h3, 
+ .project-box:nth-child(2):hover h3, 
+ .project-box:nth-child(3):hover h3, 
+ .project-box:nth-child(1):hover p, 
+ .project-box:nth-child(2):hover p, 
+ .project-box:nth-child(3):hover p {
+     opacity: 0;
+ }
+ 
+ .project-box:nth-child(1)::after,
+ .project-box:nth-child(2)::after,
+ .project-box:nth-child(3)::after {
+     content: "Go";
+     display: block;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     font-size: 2rem;
+     font-weight: bold;
+     color: white;
+     opacity: 0;
+     transition: opacity 0.5s ease 0.3s;
+ }
+ 
+ .project-box:nth-child(1):hover::after,
+ .project-box:nth-child(2):hover::after,
+ .project-box:nth-child(3):hover::after {
+     opacity: 1;
+ }
+ 
+ 
+ .project-box:hover {
+     transform: scale(1.05);
+     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+ }
+ 
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
-.project-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+@media (max-width: 480px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
 }
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 @media (max-width: 768px) {
     .portfolio-grid {
@@ -85,16 +211,34 @@ body {
     display: inline-block;
     margin: 20px;
     padding: 10px 20px;
-    background-color: #007BFF; 
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    background-color: #ffffff00;
+    color: #fff;
+    width: 8.5em;
+    height: 2.9em;
+    border: #3654ff 0.2em solid;
+    border-radius: 12px;
+    text-align: right;
+    font-family: fantasy;
+    transition: all 0.6s ease;
     z-index: 500;
 }
 
-
 #back-btn:hover {
-    background-color: #0056b3;
+    background-color: #3654ff;
+}
+
+#back-btn svg {
+    width: 1.6em;
+    margin: -0.2em -0.35em 1em;
+    position: absolute;
+    display: flex;
+    transition: all 0.6s ease;
+}
+
+#back-btn:hover svg {
+    transform: translateX(-5px);
+}
+
+button {
+    margin: 0 1.5em;
 }

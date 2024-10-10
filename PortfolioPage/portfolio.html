@@ -14,56 +14,62 @@
     <!-- Custom Cursor -->
     <object class="cursor"></object>
 
-    <button id="back-btn" class="clickable" data-url="/MainPage/index.html">Return</button>
+    <button id="back-btn" class="clickable" data-url="/MainPage/index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12H4.5m0 0l6.75-6.75M4.5 12l6.75 6.75"></path> <!-- Mirrored the arrow path -->
+        </svg>
+        Go Back
+      </button>
+      
+
     <script>
         function goBack() {
-            window.history.back(); // This takes the user back to the previous page
+            window.history.back();
         }
     </script>
     <div class="portfolio-grid">
-        <!-- 3 smaller boxes representing projects -->
-        <div class="project-box" onclick="window.location.href='project1.html'">
-            <h3>Project 1</h3>
-            <p>Short description of the project...</p>
-        </div>
+        <div class="project-box" onclick="window.open('https://projectmedallion.netlify.app', '_blank')">
+            <h3>Project Medallion</h3>
+            <p>Website store project for a jewellery brand, with a modern and aesthetic neumorphism design and UI.</p>
+        </div>               
         <div class="project-box" onclick="window.location.href='project2.html'">
-            <h3>Project 2</h3>
-            <p>Short description of the project...</p>
+            <h3>Noter Plus+</h3>
+            <p>Mobile app for taking notes, using database to store them.</p>
         </div>
         <div class="project-box" onclick="window.location.href='project3.html'">
             <h3>Project 3</h3>
             <p>Short description of the project...</p>
         </div>
         <div class="project-box" onclick="window.location.href='project3.html'">
-            <h3>Project 3</h3>
+            <h3>Project 4</h3>
             <p>Short description of the project...</p>
         </div>
         <div class="project-box" onclick="window.location.href='project3.html'">
-            <h3>Project 3</h3>
+            <h3>Project 5</h3>
             <p>Short description of the project...</p>
         </div>
         <div class="project-box" onclick="window.location.href='project3.html'">
-            <h3>Project 3</h3>
+            <h3>Project 6</h3>
             <p>Short description of the project...</p>
         </div>
         <div class="project-box" onclick="window.location.href='project3.html'">
-            <h3>Project 3</h3>
+            <h3>Project 7</h3>
             <p>Short description of the project...</p>
         </div>
         <div class="project-box" onclick="window.location.href='project3.html'">
-            <h3>Project 3</h3>
+            <h3>Project 8</h3>
             <p>Short description of the project...</p>
         </div>
         <div class="project-box" onclick="window.location.href='project3.html'">
-            <h3>Project 3</h3>
+            <h3>Project 9</h3>
             <p>Short description of the project...</p>
         </div>
         <div class="project-box" onclick="window.location.href='project3.html'">
-            <h3>Project 3</h3>
+            <h3>Project 10</h3>
             <p>Short description of the project...</p>
         </div>
         <div class="project-box" onclick="window.location.href='project3.html'">
-            <h3>Project 3</h3>
+            <h3>Project 11</h3>
             <p>Short description of the project...</p>
         </div>
     </div>
